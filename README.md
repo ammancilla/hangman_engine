@@ -12,9 +12,9 @@ Then, require it on your file:
 require 'hangman_engine'
 ```
 ## Usage
-- **Game Flow**
+#### Game Flow
 
- All you need to control your Hangman game flow is in `HangmanEngine::Game`. To get started, create a new      `HangmanEngine::Game` instace: 
+ All you need to control your Hangman game flow is in `HangmanEngine::Game`. To get started, create a new instace: 
 
 ```ruby
 # - Parameters
@@ -23,16 +23,16 @@ require 'hangman_engine'
 # clue: short helper text for the player.
 hangman_game = HangmanEngine::Game.new(word, allowed_attempts, clue)
 ```
-After creating a `HangmanEngine::Game` instance, use his methods to control the game flow (getters and setters are not shown):
+ After creating a `HangmanEngine::Game` instance, use his methods to control the game flow (getters and setters are not shown):
 ```ruby
 guess(ltr) # attempt to guess a letter.
 guessed?(ltr) # determines whether the letter was guessed or not.
 remaining_attempts
-solved? # determines whether the game was solved or not.
+solved? 
 lost? # determines if the player has lost.
 finished? # determines whether the game was solved or if the player has lost
 ```
-- **Game View (Console)**
+#### Game View
 
 A helper class to help you build a **console interface** for the game is also included. `HangmanEngine::Drawer` is going to help you to display a `HangmanEngine::Game` in the console. Available methods are:
 ```ruby
