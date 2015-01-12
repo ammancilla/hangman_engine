@@ -69,7 +69,7 @@ module HangmanEngine
     def self.draw_puppet(hangman_game)
       allowat = hangman_game.allowed_attempts
       rattempts = hangman_game.remaining_attempts
-      puppet =  burn_or_body(" O ", allowat, allowat, hangman_game.attempts) + "\n"
+      puppet =  burn_or_body(" O ", allowat, allowat, rattempts) + "\n"
       1.upto(allowat) do |i|
         puppet << case allowat - i
         when 5
