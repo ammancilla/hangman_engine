@@ -67,25 +67,25 @@ module HangmanEngine
     # / \
     #
     def self.draw_puppet(hangman_game)
-      allowad = hangman_game.allowed_attempts
-      attempts = hangman_game.attempts
-      puppet =  burn_or_body(" O ", allowad, allowad, attempts) + "\n"
-      1.upto(allowad) do |i|
-        puppet << case allowad - i
+      allowat = hangman_game.allowed_attempts
+      rattempts = hangman_game.remaining_attempts
+      puppet =  burn_or_body(" O ", allowat, allowat, hangman_game.attempts) + "\n"
+      1.upto(allowat) do |i|
+        puppet << case allowat - i
         when 5
-          burn_or_body('/', 5, allowad, attempts)
+          burn_or_body('/', 5, allowat, rattempts)
         when 4
-          burn_or_body('|', 4, allowad, attempts)
+          burn_or_body('|', 4, allowat, rattempts)
         when 3
-          burn_or_body("\\", 3, allowad, attempts) + "\n"
+          burn_or_body("\\", 3, allowat, rattempts) + "\n"
         when 2
-          burn_or_body('/', 2, allowad, attempts) + ' '
+          burn_or_body('/', 2, allowat, rattempts) + ' '
         when 1
-          burn_or_body("\\", 1, allowad, attempts) + "\n"
+          burn_or_body("\\", 1, allowat, rattempts) + "\n"
         when 0
           ''
         else
-          burn_or_body(" | ", allowad - i, allowad, attempts) + "\n"
+          burn_or_body(" | ", allowat - i, allowat, rattempts) + "\n"
         end
       end
       puppet
@@ -102,8 +102,8 @@ module HangmanEngine
     end
     
     private
-    def self.burn_or_body(part, part_number, allowed_attempts, attempts)
-      (allowed_attempts - (allowed_attempts - attempts)) >= part_number ? ' ' : part
+    def self.burn_or_body(part, part_number, allowed_attempts, remaining_attempts)
+      (allowed_attempts - remaining_attempts) >= part_number ? ' ' : part
     end
   end
 end
