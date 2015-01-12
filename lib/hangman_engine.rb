@@ -44,7 +44,7 @@ module HangmanEngine
       @allowed_attempts - @attempts
     end
 
-    def won?
+    def solved?
       @word.split('').uniq.length == @guesses.length
     end
 
@@ -53,7 +53,7 @@ module HangmanEngine
     end
 
     def finished?
-      won? || lost?
+      solved? || lost?
     end
   end
 
