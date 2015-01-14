@@ -91,9 +91,10 @@ module HangmanEngine
       puppet
     end
 
+    # EL TOBE WAS HERE
     # Draw game board based on the word to guess and the gessues
     # 
-    # a _ f o n _ _
+    # a_ f o n _ _
     # 
     def self.draw_board(hangman_game)
       board = ''
