@@ -23,14 +23,14 @@ require 'hangman_engine'
 # clue: short helper text for the player.
 hangman_game = HangmanEngine::Game.new(word, allowed_attempts, clue)
 ```
- After creating a `HangmanEngine::Game` instance, use his methods to control the game flow (getters and setters are not shown):
+ After creating a `HangmanEngine::Game` instance, use its methods to control the game flow (getters and setters are not shown):
 ```ruby
-guess(ltr) # attempt to guess a letter.
-guessed?(ltr) # determines whether the letter was guessed or not.
+guess(ltr) # attempts to guess a letter.
+guessed?(ltr) # determines whether the given letter was guessed or not.
 remaining_attempts
 solved? 
 lost? # determines if the player has lost.
-finished? # determines whether the game was solved or if the player has lost
+finished? # determines whether the game was solved or if the player has lost.
 ```
 #### Game View
 
